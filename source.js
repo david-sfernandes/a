@@ -1,17 +1,14 @@
 // Nessa lib o http:// e https:// do link tem que ser alterado para ws:// ou wss://
 // Aqui se cria a conexão com o servido
-const ws = new WebSocket("ws://msger-server.herokuapp.com/")
+const ws = new WebSocket("wss://msger-server.herokuapp.com/")
 
-// Função execudada quando a conexão é criada ("aberta")
 ws.onopen = function(e) {
     console.log("Connected!")
-    // Envia mesagens pro servido
     ws.send("Hello server!")
 }
 
 // Função execudada quando se recebe a mensagem 
 ws.onmessage = function(e) {
-    // Mensagem pode ser  acessado com e.data
     console.log(e.data)
 }
 
